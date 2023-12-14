@@ -1,35 +1,9 @@
-<div class="container">
-  <nav class="container-navbar">
-    <div>
-      DYSHOCK
-    </div>
-    <ul>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-      <li>links</li>
-    </ul>
-    <div>
-      D_ys
-    </div>
-  </nav>
-  <div class="container-body">
-    <div class="container-menu-vertical">
-      <ul>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-      </ul>
-    </div>
-    <div class="container-body-render">
-      <div class="body-render">
+<div class="flex flex-col h-screen">
+  <app-navbar class="border-b border-stone-500"></app-navbar>
+  <div class="flex flex-row h-full">
+    <app-sidebar class="bg-zinc-900 h-full border-r border-stone-500"></app-sidebar>
+    <div class="flex flex-col justify-between bg-zinc-900 w-screen">
+      <div class="body-render p-7">
         <div>
           PUB
         </div>
@@ -37,9 +11,7 @@
           test render
         </div>
       </div>
-      <footer>
-        FOOTER
-      </footer>
+      <app-footer class="bg-zinc-900 p-8 border-t border-stone-500"></app-footer>
     </div>
   </div>
 </div>

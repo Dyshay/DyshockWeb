@@ -1,21 +1,25 @@
-<nav class="flex justify-between bg-zinc-900 p-6">
-  <img src="assets/logo-cropped.svg" height="150" width="150">
-  <div class="flex flex-row justify-around w-full">
-    <app-links class="self-center"></app-links>
-    <ul class="flex flex-row gap-3 self-center">
+<nav>
+  <div class="flex justify-between bg-zinc-900 p-6">
+    <img src="assets/logo-cropped.svg" height="150" width="150">
+    <div class="flex flex-row justify-between w-full px-12 max-sm:hidden">
+      <app-links class="self-center"></app-links>
+      <ul class="flex flex-row gap-3 self-center">
       <span>
         <button class="bg-zinc-800 rounded-md p-2.5 px-3.5">
         <li><i class="fa-brands fa-discord"></i></li>
         </button>
       </span>
-      <span>
+        <span>
       <button class="bg-zinc-800 rounded-md py-2.5 px-3.5">
         <i class="fa-brands fa-x-twitter"></i>
       </button>
       </span>
-    </ul>
-  </div>
-  <div class="self-center">
-    <app-steam-account></app-steam-account>
+      </ul>
+    </div>
+    <div class="self-center">
+      <div class="flex flex-row gap-2">
+        <app-steam-account class="max-sm:hidden"></app-steam-account>
+      </div>
+    </div>
   </div>
 </nav>

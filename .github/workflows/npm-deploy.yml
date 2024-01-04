@@ -32,9 +32,8 @@ jobs:
         USERNAME: ubuntu
         PORT: 22
         PASSWORD: ${{ secrets.REMOTE_SSH_KEY }}
-        script_stop: true
         script: |
           rm -r /var/www/dyshock/*
-        source: "./dist/dyshock-com/browser/"
+        source: "./dist/dyshock-com/browser"
         target: "/var/www/dyshock"
         strip_components: 3 # this is important

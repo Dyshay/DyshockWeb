@@ -1,3 +1,7 @@
 button:hover {
   color: #D47332;
 }
+
+image {
+  background-size: contain;
+}

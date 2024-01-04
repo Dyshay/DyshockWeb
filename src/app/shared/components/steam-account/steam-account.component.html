@@ -1,22 +1,30 @@
-<div class="flex border-l-2 pl-4 border-zinc-800" >
-  @if (isConnected) {
+<div class="flex border-l-2 pl-4 border-zinc-800">
+  @if (isAuthenticated) {
     <div class="self-center mr-4">
       <img
         class="border-yellow-800 border-2 rounded-md"
-        src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/00/006ae79d864301835b0b4d8c9b1378cd5550d1c4_full.jpg"
-        height="85" width="85">
+        loading="lazy"
+        src="data:image/png;base64,{{(user$ | async)?.imageContent}}"
+        height="120" width="120">
     </div>
     <div class="text-xs self-center">
-      <div>D_ys</div>
-      <div class="text-stone-600 whitespace-nowrap">Level 1</div>
+      <div>{{ (user$ | async)?.name }}</div>
+      <div class="text-stone-600 whitespace-nowrap">Level {{ (user$ | async)?.level }}</div>
     </div>
   } @else {
-    <button class="flex flex-row self-center align-middle bg-zinc-800 p-3 rounded-md hov" (click)="isConnected = !isConnected">
+    <button class="flex flex-row self-center align-middle bg-zinc-800 p-3 rounded-md hov" (click)="connect()">
       <div class="whitespace-nowrap">Login</div>
       <div class="ml-2"><i class="fa-brands fa-steam-symbol"></i></div>
     </button>
   }
-  <button class="bg-zinc-800 rounded-md py-2.5 px-3.5 ml-3">
-    <i class="fa-solid fa-cart-shopping"></i>
-  </button>
+  <div class="flex flex-row">
+    <!--<button disabled class="bg-zinc-800 rounded-md py-2.5 px-3.5 ml-3">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button> -->
+    @if (isAuthenticated) {
+    <button class="bg-zinc-800 rounded-md py-2.5 px-3.5 ml-3" (click)="disconnect()">
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </button>
+    }
+  </div>
 </div>

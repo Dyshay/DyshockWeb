@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
 import {DashboardPageComponent} from "./pages/dashboard-page/dashboard-page.component";
 
 @Component({
@@ -10,6 +10,6 @@ import {DashboardPageComponent} from "./pages/dashboard-page/dashboard-page.comp
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'Dyshock-com';
 }

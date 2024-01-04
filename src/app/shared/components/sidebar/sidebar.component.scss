@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-button:hover i {
+li:hover i {
   color: #D47332;
 }
+li:hover {
+  cursor: pointer;
+}
+
+.is-active {
+  background: rgb(39 39 42 / var(--tw-bg-opacity));
+  i {
+    color: #D47332;
+  }
+}
+

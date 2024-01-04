@@ -1,10 +1,26 @@
-<ul class="flex flex-col">
-  <button class="p-7 hover:bg-zinc-800">
+<ul class="flex flex-col h-dvh">
+  <!-- <button class="p-7 hover:bg-zinc-800">
     <i class="fa-solid fa-house"></i>
     <li>Home</li>
   </button>
   <button class="p-7 hover:bg-zinc-800">
     <i class="fa-solid fa-bullhorn"></i>
     <li>Announce</li>
-  </button>
+  </button> -->
+  <a class="p-7 hover:bg-zinc-800 text-center" [routerLink]="['/servers']" routerLinkActive="is-active">
+    <li class="flex flex-col">
+      <i class="fa-solid fa-server"></i>
+      <span>Servers</span>
+    </li>
+  </a>
+  <!--<a class="p-7 hover:bg-zinc-800 text-center"  [routerLink]="['/leaderboard']" routerLinkActive="is-active">
+    <li>
+      <i class="fa-solid fa-chart-simple"></i>
+      <span>Leaderboard</span>
+    </li>
+  </a> -->
+  <!--  <button class="p-7 hover:bg-zinc-800">-->
+  <!--    <i class="fa-solid fa-chart-simple"></i>-->
+  <!--    <li>Leaderboard</li>-->
+  <!--  </button>-->
 </ul>

@@ -1,0 +1,8 @@
+<div class="grid gap-4 mt-3 sm:grid-col-1 md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
+  <!--               [ngClass]="{'xl:grid-cols-4': !isChatEnabled, 'xl:grid:cols-3': isChatEnabled}">-->
+  @for (server of (servers$ | async);track server.ip) {
+    <app-server-card class="bg-zinc-800 rounded-md p-2" [server]="server"></app-server-card>
+  } @empty {
+
+  }
+</div>

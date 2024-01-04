@@ -1,6 +1,6 @@
-<div class="flex flex-col xl:h-screen md:h-screen sm:h-full">
+<div class="flex flex-col h-dvh">
   <app-navbar class="border-b border-zinc-800"></app-navbar>
-  <div class="flex flex-row h-full">
+  <div class="flex flex-row">
     <app-sidebar class="bg-zinc-900 border-r border-zinc-800 max-sm:hidden sm:hidden md:block "></app-sidebar>
     <div class="grid grid-cols-6 justify-between w-screen">
 
@@ -11,12 +11,8 @@
           <div class="w-full bg-amber-950 p-2 align-middle text-center rounded-md">
             This site is currently under construction <i class="fa-solid fa-hammer ml-3"></i>
           </div>
-          <div class="grid gap-4 mt-3 sm:grid-col-1 md:grid-cols-2 lg:grid-cols-3"
-               [ngClass]="{'xl:grid-cols-4': !isChatEnabled, 'xl:grid:cols-3': isChatEnabled}">
-            <app-server-card class="bg-zinc-800 rounded-md p-2"></app-server-card>
-            <app-server-card class="bg-zinc-800 rounded-md p-2"></app-server-card>
-            <app-server-card class="bg-zinc-800 rounded-md p-2"></app-server-card>
-          </div>
+          <router-outlet></router-outlet>
+
         </div>
         <app-footer class="bg-zinc-900 p-8 border-t border-zinc-800"></app-footer>
       </div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Server} from "../../../../shared/models/server.model";
 import {ServerService} from "../../../../shared/services/server.service";
 import {ServerCardComponent} from "../../../../shared/components/server-card/server-card.component";
@@ -17,7 +17,13 @@ import {ServersHubService} from "../../../../shared/services/servers-hub.service
   styleUrl: './servers.component.css'
 })
 export class ServersComponent {
-  servers$: Observable<Server[]> = this.serverHub.servers$
+  servers$: Observable<Server[]> = this.serverHub.servers$.pipe(
+    map(servers => {
+      return servers.map(server => {
+        return { ...server, name: server.name.substring(13)}
+      })
+    })
+  )
   constructor(private serverHub: ServersHubService) {
   }
 

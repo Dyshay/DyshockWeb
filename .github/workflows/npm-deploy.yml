@@ -33,7 +33,7 @@ jobs:
         PORT: 22
         PASSWORD: ${{ secrets.REMOTE_SSH_KEY }}
         script: |
-          rm -r /var/www/dyshock/*
+          rm -r /var/www/dyshock/browser
     - name: copy file via ssh key
       uses: appleboy/ssh-action@v1.0.2
       with:
@@ -41,8 +41,6 @@ jobs:
         USERNAME: ubuntu
         PORT: 22
         PASSWORD: ${{ secrets.REMOTE_SSH_KEY }}
-        script: |
-          rm -r /var/www/dyshock/*
         source: "./dist/dyshock-com/browser"
         target: "/var/www/dyshock"
         strip_components: 3 # this is important

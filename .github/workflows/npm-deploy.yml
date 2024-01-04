@@ -31,7 +31,7 @@ jobs:
         HOST: 51.91.214.51
         USERNAME: ubuntu
         PORT: 22
-        KEY: ${{ secrets.REMOTE_SSH_KEY }}
+        PASSWORD: "nuj1aLDdExPiPIwb"
         source: "./dist/dyshock-com/"
         target: "/var/www/dyshock"
         strip_components: 3 # this is important

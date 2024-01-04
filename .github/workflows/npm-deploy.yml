@@ -55,3 +55,12 @@ jobs:
         script: |
           cd /var/www/dyshock/browser
           mv * ../
+    - name: delete browser folder
+      uses: appleboy/ssh-action@v1.0.2
+      with:
+        HOST: 51.91.214.51
+        USERNAME: ubuntu
+        PORT: 22
+        PASSWORD: ${{ secrets.REMOTE_SSH_KEY }}
+        script: |
+          rm -r /var/www/dyshock/browser

@@ -26,7 +26,7 @@ jobs:
     - run: ng build
 
     - name: delete old files
-      uses: appleboy/scp-action@master
+      uses: appleboy/ssh-action@v1.0.2
       with:
         HOST: 51.91.214.51
         USERNAME: ubuntu
@@ -35,7 +35,7 @@ jobs:
         script: |
           rm -r /var/www/dyshock/*
     - name: copy file via ssh key
-      uses: appleboy/scp-action@master
+      uses: appleboy/ssh-action@v1.0.2
       with:
         HOST: 51.91.214.51
         USERNAME: ubuntu
@@ -48,7 +48,7 @@ jobs:
         strip_components: 3 # this is important
 
     - name: move folder to the parent
-      uses: appleboy/scp-action@master
+      uses: appleboy/ssh-action@v1.0.2
       with:
         HOST: 51.91.214.51
         USERNAME: ubuntu

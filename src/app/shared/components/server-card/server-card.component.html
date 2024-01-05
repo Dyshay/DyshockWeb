@@ -1,7 +1,7 @@
 <div class="relative">
   @if (server.isConnected) {
     <div class="flex justify-end gap-1 absolute right-1.5 top-1.5 max-md:hidden">
-      <button class="bg-zinc-900 rounded-md py-2.5 px-3.5" (click)="connectServer()">
+      <button class="bg-zinc-900 rounded-md py-2.5 px-3.5 hover:is-active" (click)="connectServer()">
         <i class="fa-solid fa-gamepad"></i>
       </button>
       <button class="bg-zinc-900 rounded-md py-2.5 px-3.5" (click)="copyServer()">
@@ -27,17 +27,22 @@
 </div>
 <div class="mt-2 relative">
   <div class="flex justify-between">
-    <div class="py-1.5 text-xl"><span>{{ server.name.substring(0, server.name.indexOf('#')) }}</span><span class="text-orange-500 font-bold">{{ server.name.slice(-2) }}</span></div>
-    <div class="bg-zinc-900 flex items-center px-1.5 py-0.5 rounded-xl justify-center"><i
-      class="fa-solid fa-users opacity-50 text-sm"></i><span
-      class="font-bold ml-1.5 "
-      [ngClass]="{'text-orange-500': server?.usedSlots > 0 && server?.usedSlots < 12}"> {{ server?.usedSlots }}</span>/{{ server?.slots }}
+    <div class="py-1.5 text-xl"><span>{{ server.name.substring(0, server.name.indexOf('#')) }}</span><span
+      class="text-orange-500 font-bold">{{ server.name.slice(-2) }}</span></div>
+
+    <div class="flex items-center">
+      <div class="bg-zinc-900 flex items-center px-2.5 py-1 rounded-xl"><i
+        class="fa-solid fa-users opacity-50 text-sm"></i><span
+        class="font-bold ml-1.5 text-sm"
+        [ngClass]="{'text-orange-500': server?.usedSlots > 0 && server?.usedSlots < 12}"> {{ server?.usedSlots }}</span><span
+        class="text-sm">/{{ server?.slots }}</span>
+      </div>
     </div>
   </div>
-  <div class="flex justify-between mt-2">
-    <div class="bg-zinc-900 p-2 rounded-xl"><i class="fa-solid fa-map opacity-50 text-sm"></i> <span
+  <div class="flex justify-between it mt-2">
+    <div class="bg-zinc-900 px-2.5 py-1 rounded-xl  flex items-center"><i class="fa-solid fa-map opacity-50 text-sm"></i> <span
       class="text-sm ml-2">{{ server?.currentMap }}</span></div>
-    <div class="bg-zinc-900 p-2 rounded-xl">
+    <div class="bg-zinc-900 px-2.5 py-1 rounded-xl flex items-center">
       <i class="fa-solid fa-chess-rook opacity-50 text-sm"></i>
       <span class="text-sm ml-2">{{ server?.type }}</span></div>
   </div>

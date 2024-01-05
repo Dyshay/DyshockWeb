@@ -1,3 +1,11 @@
-li:hover i {
-  color: #D47332;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button:hover {
+  background: rgb(39 39 42 / var(--tw-bg-opacity));
+  i {
+    color: #D47332;
+  }
 }
+

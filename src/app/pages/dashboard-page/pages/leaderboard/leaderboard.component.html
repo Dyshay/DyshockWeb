@@ -1,44 +1,43 @@
 <div class="relative overflow-x-auto mt-2">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-white">
-      <thead class="text-xs  rounded-xl text-white uppercase bg-amber-700 dark:bg-amber-700 dark:text-white">
-        <tr class="mt-2">
-          <th class="px-6 py-3 text-center rounded-l-lg">
-            Position
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 text-white">
+    <thead class="text-xs  rounded-xl uppercase bg-amber-700 text-white">
+    <tr class="mt-2">
+      <th class="px-6 py-3 max-sm:px-2 text-center rounded-l-lg max-sm:text-xs">
+        Position
+      </th>
+      <th class="px-6 py-3 max-sm:px-2.5 text-center max-sm:text-xs">
+        Player
+      </th>
+      <th class="px-6 py-3 text-center max-sm:hidden">
+        Kills
+      </th>
+      <th class="px-6 py-3 text-center max-sm:hidden">
+        K/D
+      </th>
+      <th class="px-6 py-3 max-sm:px-2 text-center rounded-r-lg">
+        Experience
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (userStats of (usersStats$ | async);track userStats.username) {
+        <tr class="bg-white bg-zinc-800 mt-2">
+          <th scope="row" class="px-6 py-4 max-sm:px-1.5 font-medium text-white whitespace-nowrap text-center rounded-l-lg">
+            {{ userStats.position }}
           </th>
-          <th class="px-6 py-3 text-center">
-            Player
-          </th>
-          <th class="px-6 py-3 text-center">
-            Kills
-          </th>
-          <th class="px-6 py-3 text-center">
-            K/D
-          </th>
-          <th class="px-6 py-3 text-center rounded-r-lg">
-            Experience
-          </th>
+          <td class="px-6 py-4 max-sm:px-2.5 text-center max-sm:text-xs">{{ userStats.username }}
+          </td>
+          <td class="px-6 py-4 text-center max-sm:hidden max-sm:text-xs">
+            {{ userStats.kills }}
+          </td>
+          <td class="px-6 py-4 text-center max-sm:hidden max-sm:text-xs">
+            {{ userStats.kdr | number: '1.0-2' }}
+          </td>
+          <td class="px-6 py-4 max-sm:px-0 text-center rounded-r-lg">
+            {{ userStats.experience }}
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        @for (userStats of (usersStats$ | async);track userStats.username) {
-          <tr class="bg-white dark:bg-zinc-800 mt-2">
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center rounded-l-lg">
-              {{ userStats.position }}
-            </th>
-            <td class="px-6 py-4 text-center">
-              {{ userStats.username }}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{ userStats.kills }}
-            </td>
-            <td class="px-6 py-4 text-center">
-              {{ userStats.kdr | number: '1.000' }}
-            </td>
-            <td class="px-6 py-4 text-center rounded-r-lg">
-              {{ userStats.experience }}
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
+      }
+    </tbody>
+  </table>
 </div>

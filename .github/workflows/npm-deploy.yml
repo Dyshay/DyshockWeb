@@ -27,6 +27,7 @@ jobs:
     - run: npm install
     - run: npm install -g @angular/cli > /dev/null
     - run: ng build
+    
 
     - name: delete old files
       uses: appleboy/ssh-action@v1.0.2

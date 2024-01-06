@@ -1,52 +1,44 @@
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-white">
-    <thead class="text-xs text-white uppercase bg-amber-700 dark:bg-amber-700 dark:text-white">
-    <tr>
-      <th scope="col" class="px-6 py-3 text-center">
-        Rank
-      </th>
-      <th scope="col" class="px-6 py-3 text-center">
-          Name
-      </th>
-      <th scope="col" class="px-6 py-3 text-center">
-          Experience
-      </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
-      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-        Apple
-      </th>
-      <td class="px-6 py-4 text-center">
-        Silver
-      </td>
-      <td class="px-6 py-4 text-center">
-        Laptop
-      </td>
-    </tr>
-    <tr class="bg-white border-b dark:bg-zinc-800 dark:border-zinc-700">
-      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-        Microsoft
-      </th>
-      <td class="px-6 py-4 text-center">
-        White
-      </td>
-      <td class="px-6 py-4 text-center">
-        Laptop PC
-      </td>
-    </tr>
-    <tr class="bg-white dark:bg-zinc-800">
-      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-        Magic
-      </th>
-      <td class="px-6 py-4 text-center">
-        Black
-      </td>
-      <td class="px-6 py-4 text-center">
-        Accessories
-      </td>
-    </tr>
-    </tbody>
-  </table>
+<div class="relative overflow-x-auto mt-2">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-white">
+      <thead class="text-xs  rounded-xl text-white uppercase bg-amber-700 dark:bg-amber-700 dark:text-white">
+        <tr class="mt-2">
+          <th class="px-6 py-3 text-center rounded-l-lg">
+            Position
+          </th>
+          <th class="px-6 py-3 text-center">
+            Player
+          </th>
+          <th class="px-6 py-3 text-center">
+            Kills
+          </th>
+          <th class="px-6 py-3 text-center">
+            K/D
+          </th>
+          <th class="px-6 py-3 text-center rounded-r-lg">
+            Experience
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (userStats of (usersStats$ | async);track userStats.username) {
+          <tr class="bg-white dark:bg-zinc-800 mt-2">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center rounded-l-lg">
+              {{ userStats.position }}
+            </th>
+            <td class="px-6 py-4 text-center">
+              {{ userStats.username }}
+            </td>
+            <td class="px-6 py-4 text-center">
+              {{ userStats.kills }}
+            </td>
+            <td class="px-6 py-4 text-center">
+              {{ userStats.kdr | number: '1.000' }}
+            </td>
+            <td class="px-6 py-4 text-center rounded-r-lg">
+              {{ userStats.experience }}
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
 </div>

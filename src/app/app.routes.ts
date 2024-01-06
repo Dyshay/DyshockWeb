@@ -7,7 +7,7 @@ export const routes: Routes = [{
   path: "", component: DashboardPageComponent,
   children: [{
     path: '',
-    redirectTo: 'servers',
+    redirectTo: 'leaderboard',
     pathMatch: 'full'
   }, {
     path: 'servers',

@@ -33,7 +33,7 @@ export class ServerCardComponent {
       case 'de_inferno':
         return 'assets/maps/inferno.png'
       case 'de_dust2':
-        return 'assets/maps/inferno.png'
+        return 'assets/maps/d2.png'
       default:
         return 'assets/maps/notfound.png'
     }

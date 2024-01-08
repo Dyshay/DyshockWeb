@@ -27,11 +27,12 @@ export class ServerCardComponent {
   }
 
   getImageFromMap(currentMap: string) {
-    console.log(currentMap)
     switch (currentMap) {
       case 'aim_redline_rp':
         return 'assets/maps/akredline.png';
       case 'de_inferno':
+        return 'assets/maps/inferno.png'
+      case 'de_dust2':
         return 'assets/maps/inferno.png'
       default:
         return 'assets/maps/notfound.png'

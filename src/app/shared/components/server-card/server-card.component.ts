@@ -34,6 +34,8 @@ export class ServerCardComponent {
         return 'assets/maps/inferno.png'
       case 'de_dust2':
         return 'assets/maps/d2.jpg'
+      case 'aim_ag_texture2':
+        return 'assets/maps/texture2.jpg'
       default:
         return 'assets/maps/notfound.png'
     }
